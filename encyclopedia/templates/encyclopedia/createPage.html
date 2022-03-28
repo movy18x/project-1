@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>create page</h1>
+    <form  method = 'post'>
+        {% csrf_token %}
+        <textarea  aria-label="title" name = "title" style="height: 50px">
+        </textarea>
+        <textarea  aria-label="content" name = "content" style="height: 220px">
+        </textarea>
+
+        <a href = '#'>
+            <input type = "submit">
+        </a>
+
+    </form>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>edit page</h1>
+    <form method="post" >
+        {% csrf_token %}
+        <textarea aria-label="edit:" id="in"  name = "edit_content" style="height: 150px; display: block" >
+        {{ content }}
+        </textarea>
+        <a href = "{% url "index" %}">
+            <button style="margin: 15px;" type = "submit" >
+                save edit
+            </button>
+        </a>
+            {% if "in" is None %}
+                <input type="text" value="{{ new_content }}">
+            {% endif %}
+    </form>
+{% endblock %}
